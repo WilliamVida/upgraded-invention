@@ -1,0 +1,9 @@
+https://stackoverflow.com/questions/44650494/how-to-extract-a-sub-column-from-a-pandas-dataframe
+https://abort-report.eu/
+https://gateway.euro.who.int/en/datasets/european-health-for-all-database/
+https://gateway.euro.who.int/en/indicators/hfa_586-7010-abortions-per-1000-live-births/visualizations/#id=19681&tab=table
+https://www.tandfonline.com/doi/full/10.1080/13625187.2022.2057469#:~:text=Figure%204.%20Abortion%20rate%20in%20women%20of%20childbearing%20age%20(15%E2%80%9349%E2%80%89years)%20by%20European%20country.%20x%2Daxis%3A%20years%3B%20y%2Daxis%3A%20abortion%20rate%20per%201000%20women%20of%20childbearing%20age%20(15%E2%80%9349%20years).%20*According%20to%20national%20statistics%20childbearing%20age%20is%20comprised%20between%2015%20and%2044%20years.
+https://abort73.com/abortion_facts/worldwide_abortion_statistics/
+https://www.johnstonsarchive.net/policy/abortion/usa/ab-usa-AL.html
+https://archive.ph/gNRkZ
+https://plotly.com/python/choropleth-maps/
