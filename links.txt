@@ -7,3 +7,4 @@ https://abort73.com/abortion_facts/worldwide_abortion_statistics/
 https://www.johnstonsarchive.net/policy/abortion/usa/ab-usa-AL.html
 https://archive.ph/gNRkZ
 https://plotly.com/python/choropleth-maps/
+https://community.plotly.com/t/how-to-display-plotly-graph-on-github-pages/44398/2
