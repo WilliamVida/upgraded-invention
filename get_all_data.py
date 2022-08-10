@@ -12,44 +12,46 @@ states = ["AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DC", "DE", "FL", "GA",
           "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
 states.sort()
 
-file_path ="./statistics/"
-req = Request("https://www.johnstonsarchive.net/policy/abortion/")
+url = "http://www.johnstonsarchive.net/policy/abortion/"
+file_path = "./statistics/by state"
+req = Request(url)
 html_page = urlopen(req)
 soup = BeautifulSoup(html_page, "lxml")
 
 # https://stackoverflow.com/a/68426172
+# Find links that direct to each state, and declare it as a set to remove any duplicates.
 links = {i["href"] for i in soup.select("[href^='usa/']")}
 links = list(links)
 links.sort()
 
-# print(links[0][-7:-5])
-# print(links[0])
-# print(links)
+# Turn the states and links to a dict.
+states_and_links = {states[i]: links[i] for i in range(len(states))}
 
-res = {states[i]: links[i] for i in range(len(states))}
-
-for key, value in res.items():
-    print(key, ' : ', value)
+for key, value in states_and_links.items():
+    print(key, " : ", value)
 
 isExist = os.path.exists(file_path)
 if not isExist:
     os.makedirs(file_path)
-    
 
-url = "http://www.johnstonsarchive.net/policy/abortion/"
 i = 0
-for key, value in res.items():
-    # remove to get all states
-    if int(i) >= 0 and int(i)<=10:
-        table=pd.read_html(f"{url}{value}")
+for key, value in states_and_links.items():
+    # remove for loop to get all states
+    if int(i) >= 0 and int(i) <= 9 and key != "DC":
+        table = pd.read_html(f"{url}{value}")
         table = table[0]
-        table = table[["year","abortionrate,residents","abortion rate, merged"]]
-        table.columns = ['Year',  'Abortion rate', 'Abortion rate (Guttmacher)']
-        table["Abortion rate"]=table["Abortion rate"].astype(str).replace(r'[()]+', '', regex=True)
-        table["Abortion rate (Guttmacher)"]=table["Abortion rate (Guttmacher)"].astype(str).replace(r'[()]+', '', regex=True)
+        # Get the columns from the table and rename them.
+        table = table[["year", "abortion rate, merged"]]
+        table.columns = ["Year", "Abortion rate (Guttmacher)"]
+        # Change the format of the table.
+        table.insert(0, "State", key)
+        # Replace any brackets in the column.
+        table["Abortion rate (Guttmacher)"] = table["Abortion rate (Guttmacher)"].astype(
+            str).replace(r"[()]+", "", regex=True)
+        # Drop the last two rows as they are irrelevant.
         table = table.iloc[:-2]
-        table.to_csv(f"statistics/{key}.csv", index=False)
-    i = i+1
-    
+        table.to_csv(f"{file_path}/{key}.csv", index=False)
+        print("Downloaded:", key)
+    i = i + 1
 
 print("Time: %s seconds" % (time.time() - start_time))
