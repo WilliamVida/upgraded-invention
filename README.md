@@ -1,3 +1,3 @@
 # US Abortion Rate by State
 
-All figures from https://www.johnstonsarchive.net/policy/abortion/.
+All abortion figures from https://www.johnstonsarchive.net/policy/abortion/.

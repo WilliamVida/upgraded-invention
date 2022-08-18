@@ -3,7 +3,7 @@ import glob
 from traceback import print_tb
 import pandas as pd
 
-os.chdir("./statistics/by state")
+os.chdir("./statistics/abortion rate by state")
 extension = "csv"
 
 # https://stackoverflow.com/a/46751737
@@ -22,5 +22,8 @@ df = pd.concat(l, ignore_index=True, sort=False)
 df = df[df["Abortion rate (Guttmacher)"].notna()]
 
 # Output to a CSV.
+if not os.path.exists("../all states/"):
+    os.makedirs("../all states/")
+
 df.to_csv("../all states/All States Abortion Rate.csv",
           index=False, encoding="utf-8-sig")

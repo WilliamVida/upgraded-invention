@@ -1,3 +1,11 @@
+https://plotly.com/python/range-slider/
+https://stackoverflow.com/questions/66190574/plotly-how-to-annotate-end-of-multiple-lines-with-text-and-marker-colors-that-m
+https://plotly.com/python/discrete-color/
+https://plotly.com/python/marker-style/
+https://stackoverflow.com/questions/69286545/display-only-single-line-on-hover-hide-all-other-lines
+https://dylancastillo.co/4-ways-to-improve-your-plotly-graphs/
+https://stackoverflow.com/questions/69278251/plotly-including-additional-data-in-hovertemplate
+
 https://stackoverflow.com/questions/44650494/how-to-extract-a-sub-column-from-a-pandas-dataframe
 https://abort-report.eu/
 https://gateway.euro.who.int/en/datasets/european-health-for-all-database/

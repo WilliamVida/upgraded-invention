@@ -16,7 +16,7 @@ fig.update_traces(mode="markers+lines+text", textposition="middle right",
                   marker=dict(size=8, line=dict(
                       width=1,
                       color="DarkSlateGrey")),
-                  hovertemplate="<b>%{text}</b><br>Year: %{x}<br>Abortion rate: %{y}"
+                hovertemplate="<b>%{text}</b><br>Abortion Rate: %{y}<br>Year: %{x}<br><extra></extra>",   
                   )
 fig.update_layout(autotypenumbers="convert types", legend_title="State",
                   hoverlabel=dict(
