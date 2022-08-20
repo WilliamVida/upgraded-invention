@@ -37,23 +37,23 @@ for key, value in states_and_links.items():
 i = 0
 for key, value in states_and_links.items():
     # remove if to get all states
-    if int(i) >= 0 and int(i) <= 9 and key != "DC":
-        table = pd.read_html(f"{value}")
-        table = table[0]
+    # if int(i) >= 0 and int(i) <= 9 and key != "DC":
+    table = pd.read_html(f"{value}")
+    table = table[0]
 
-        # Get the columns from the table and rename them.
-        table = table[["year", "abortion rate, merged"]]
-        table.columns = ["Year", "Abortion rate (Guttmacher)"]
+    # Get the columns from the table and rename them.
+    table = table[["year", "abortion rate, merged"]]
+    table.columns = ["Year", "Abortion rate (Guttmacher)"]
 
-        # Change the format of the table.
-        table.insert(0, "State", key)
+    # Change the format of the table.
+    table.insert(0, "State", key)
 
-        # Replace any brackets in the column.
-        table["Abortion rate (Guttmacher)"] = table["Abortion rate (Guttmacher)"].astype(
-            str).replace(r"[()]+", "", regex=True)
+    # Replace any brackets in the column.
+    table["Abortion rate (Guttmacher)"] = table["Abortion rate (Guttmacher)"].astype(
+        str).replace(r"[()]+", "", regex=True)
 
-        # Drop the last two rows as they are irrelevant.
-        table = table.iloc[:-2]
-        table.to_csv(f"{file_path}/{key}.csv", index=False)
-        print("Downloaded:", key)
-    i = i + 1
+    # Drop the last two rows as they are irrelevant.
+    table = table.iloc[:-2]
+    table.to_csv(f"{file_path}/{key}.csv", index=False)
+    print("Downloaded:", key)
+    # i = i + 1

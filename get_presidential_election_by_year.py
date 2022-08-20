@@ -32,7 +32,7 @@ for link in links:
 election_years = list(election_years)
 
 # Keep elections after a certain year.
-election_years_used = [i for i in election_years if i >= "1970"]
+election_years_used = [i for i in election_years if i >= "1974"]
 election_years_used.sort()
 
 wiki_elections = [

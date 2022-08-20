@@ -1,6 +1,5 @@
 import os
 import glob
-from traceback import print_tb
 import pandas as pd
 
 os.chdir("./statistics/abortion rate by state")
