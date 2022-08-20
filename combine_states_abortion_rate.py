@@ -18,7 +18,7 @@ for file_ in all_states:
 df = pd.concat(l, ignore_index=True, sort=False)
 
 # Do not include rows containing not a number.
-df = df[df["Abortion rate (Guttmacher)"].notna()]
+df = df[df["Abortion Rate (Guttmacher)"].notna()]
 
 # Output to a CSV.
 if not os.path.exists("../all states/"):

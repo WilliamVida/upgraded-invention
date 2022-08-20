@@ -7,12 +7,12 @@ table = pd.read_html(url)
 table = table[0]
 
 table = table[["year",  "abortionrate,residents", "abortion rate, merged"]]
-table.columns = ["Year", "Abortion rate", "Abortion rate (Guttmacher)"]
+table.columns = ["Year", "Abortion rate", "Abortion Rate (Guttmacher)"]
 
 # https://stackoverflow.com/a/20895818
 table["Abortion rate"] = table["Abortion rate"].astype(
     str).replace(r'[()]+', '', regex=True)
-table["Abortion rate (Guttmacher)"] = table["Abortion rate (Guttmacher)"].astype(
+table["Abortion Rate (Guttmacher)"] = table["Abortion Rate (Guttmacher)"].astype(
     str).replace(r'[()]+', '', regex=True)
 
 print(table)

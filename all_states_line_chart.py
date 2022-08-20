@@ -9,7 +9,7 @@ df = pd.read_csv(file)
 df.set_index("State")
 
 fig = px.line(df, title="Abortion Rate by State (Guttmacher)", x="Year",
-              y="Abortion rate (Guttmacher)", color="State", text=df["State"])
+              y="Abortion Rate (Guttmacher)", color="State", text=df["State"])
 
 fig.update_yaxes(rangemode="tozero")
 fig.update_traces(mode="markers+lines+text", textposition="middle right",

@@ -43,13 +43,13 @@ for key, value in states_and_links.items():
 
     # Get the columns from the table and rename them.
     table = table[["year", "abortion rate, merged"]]
-    table.columns = ["Year", "Abortion rate (Guttmacher)"]
+    table.columns = ["Year", "Abortion Rate (Guttmacher)"]
 
     # Change the format of the table.
     table.insert(0, "State", key)
 
     # Replace any brackets in the column.
-    table["Abortion rate (Guttmacher)"] = table["Abortion rate (Guttmacher)"].astype(
+    table["Abortion Rate (Guttmacher)"] = table["Abortion Rate (Guttmacher)"].astype(
         str).replace(r"[()]+", "", regex=True)
 
     # Drop the last two rows as they are irrelevant.
