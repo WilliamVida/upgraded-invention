@@ -9,4 +9,5 @@ csv2 = pd.read_csv(
 new_csv = csv1.merge(csv2, on=["State", "Year"])
 
 # Output the combined DataFrame to a CSV.
-new_csv.to_csv("./statistics/all states/All States Abortion Rate and Presidential Election Results.csv", index=False)
+new_csv.to_csv(
+    "./statistics/all states/All States Abortion Rate and Presidential Election Results.csv", index=False)

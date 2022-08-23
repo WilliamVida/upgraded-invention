@@ -36,8 +36,6 @@ for key, value in states_and_links.items():
 
 i = 0
 for key, value in states_and_links.items():
-    # remove if to get all states
-    # if int(i) >= 0 and int(i) <= 9 and key != "DC":
     table = pd.read_html(f"{value}")
     table = table[0]
 
@@ -56,4 +54,3 @@ for key, value in states_and_links.items():
     table = table.iloc[:-2]
     table.to_csv(f"{file_path}/{key}.csv", index=False)
     print("Downloaded:", key)
-    # i = i + 1
